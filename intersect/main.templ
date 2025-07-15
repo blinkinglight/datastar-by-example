@@ -1,0 +1,19 @@
+package main
+
+import "github.com/blinkinglight/datastar-by-example/shared"
+
+templ Intersect() {
+	@shared.Main() {
+		<div id="intersect">
+			@LoadMore()
+		</div>
+		// <div data-on-intersect__half="@get('/')" id="a">Loading...</div>
+	}
+}
+
+templ LoadMore() {
+	for i := 0; i < 25; i++ {
+		<div class="item">Item { i }</div>
+	}
+    <div data-on-intersect__once="@get('/')" id="a"></div>
+}

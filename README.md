@@ -1,1 +1,7 @@
-# datastar-by-example
+# datastar by example
+
+golang + https://data-star.dev examples
+
+
+infinite scroll:
+`go run ./intersect`
