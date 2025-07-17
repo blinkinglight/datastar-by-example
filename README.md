@@ -5,7 +5,7 @@ to run these examples with live rebuild on code change you need `task` `go insta
 
 
 infinite scroll example:
-`task -w`
+`task -w intersect`
 
 content type: form example
 `task -w form`
