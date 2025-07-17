@@ -12,3 +12,6 @@ content type: form example
 
 send javascript exceptions to backend example
 `task -w errortobackend`
+
+load resurses once dom ready with delay
+`task -w laodwithdelay` 
