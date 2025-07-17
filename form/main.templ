@@ -5,7 +5,7 @@ import "github.com/blinkinglight/datastar-by-example/shared"
 templ Form() {
 	@shared.Main() {
 		<div>
-            <form data-on-submit__prevent="@post('/', { contentType: 'form' })">
+            <form data-on-submit__prevent="@post('/', { contentType: 'form', 'headers': { 'X-CSRF-Token': '123' } })">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name">
                 <input type="submit" value="Submit">

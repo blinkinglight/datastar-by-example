@@ -43,7 +43,7 @@ func Form() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div><form data-on-submit__prevent=\"@post('/', { contentType: 'form' })\"><label for=\"name\">Name:</label> <input type=\"text\" id=\"name\" name=\"name\"> <input type=\"submit\" value=\"Submit\"></form></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div><form data-on-submit__prevent=\"@post('/', { contentType: 'form', 'headers': { 'X-CSRF-Token': '123' } })\"><label for=\"name\">Name:</label> <input type=\"text\" id=\"name\" name=\"name\"> <input type=\"submit\" value=\"Submit\"></form></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
