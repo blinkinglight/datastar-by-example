@@ -48,15 +48,15 @@ func Main() templ.Component {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
-			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(`<script data-src="/static/alert.js" data-on-load__delay.3s="el.setAttribute('src', el.dataset.src)"></script>`)
+			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(`<script data-src="/static/alert.js" data-on-load__delay.3s="el.src = el.dataset.src"></script>`)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `loadwithdelay/main.templ`, Line: 13, Col: 116}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `loadwithdelay/main.templ`, Line: 13, Col: 101}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</pre><div class=\"flex flex-wrap gap-4\"><img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/100/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.500ms=\"el.setAttribute('src', el.dataset.src)\"> <img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/101/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.1000ms=\"el.setAttribute('src', el.dataset.src)\"> <img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/102/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.1500ms=\"el.setAttribute('src', el.dataset.src)\"> <img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/103/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.2000ms=\"el.setAttribute('src', el.dataset.src)\"> <img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/104/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.2500ms=\"el.setAttribute('src', el.dataset.src)\"></div><script data-src=\"/static/alert.js\" data-on-load__delay.3s=\"el.setAttribute('src', el.dataset.src)\"></script>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</pre><div class=\"flex flex-wrap gap-4\"><img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/100/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.500ms=\"el.src = el.dataset.src\"> <img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/101/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.1000ms=\"el.src = el.dataset.src\"> <img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/102/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.1500ms=\"el.src = el.dataset.src\"> <img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/103/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.2000ms=\"el.src = el.dataset.src\"> <img class=\"max-w-[200px] max-h-[300px]\" data-src=\"https://picsum.photos/id/104/200/300\" src=\"/static/loader.svg\" alt=\"Placeholder Image\" data-on-load__delay.2500ms=\"el.src = el.dataset.src\"></div><script data-src=\"/static/alert.js\" data-on-load__delay.3s=\"el.src = el.dataset.src\"></script>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

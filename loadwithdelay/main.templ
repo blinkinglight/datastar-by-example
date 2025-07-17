@@ -10,15 +10,15 @@ templ Main() {
 		<p class="mb-4">You can also see multiple images loading with different delays.</p>
 		<p>also could be applied to script tags, for example:</p>
 		<pre class="bg-gray-100 p-4 rounded">
-			{ `<script data-src="/static/alert.js" data-on-load__delay.3s="el.setAttribute('src', el.dataset.src)"></script>` }
+			{ `<script data-src="/static/alert.js" data-on-load__delay.3s="el.src = el.dataset.src"></script>` }
 		</pre>
 		<div class="flex flex-wrap gap-4">
-			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/100/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.500ms="el.setAttribute('src', el.dataset.src)"/>
-			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/101/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.1000ms="el.setAttribute('src', el.dataset.src)"/>
-			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/102/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.1500ms="el.setAttribute('src', el.dataset.src)"/>
-			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/103/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.2000ms="el.setAttribute('src', el.dataset.src)"/>
-			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/104/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.2500ms="el.setAttribute('src', el.dataset.src)"/>
+			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/100/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.500ms="el.src = el.dataset.src"/>
+			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/101/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.1000ms="el.src = el.dataset.src"/>
+			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/102/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.1500ms="el.src = el.dataset.src"/>
+			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/103/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.2000ms="el.src = el.dataset.src"/>
+			<img class="max-w-[200px] max-h-[300px]" data-src="https://picsum.photos/id/104/200/300" src="/static/loader.svg" alt="Placeholder Image" data-on-load__delay.2500ms="el.src = el.dataset.src"/>
 		</div>
-		<script data-src="/static/alert.js" data-on-load__delay.3s="el.setAttribute('src', el.dataset.src)"></script>
+		<script data-src="/static/alert.js" data-on-load__delay.3s="el.src = el.dataset.src"></script>
 	}
 }
