@@ -43,7 +43,7 @@ func Form() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"flex flex-col\" data-signal-error=\"\" data-signal-servererror=\"\" data-on-error__window=\"$error = evt.error.stack; @post('/error'), evt.preventDefault()\" data-on-datastar-fetch=\"(evt.detail.type == 'error' && ($servererror = evt.detail.argsRaw.status))\"><div><a href=\"#\" class=\"underline text-blue-700\" data-on-click__prevent=\"@get('/error', { filterSignals: { exclude: /error/  }})\">Trigger Error</a></div><div><a href=\"#\" class=\"underline text-blue-700\" data-on-click__prevent=\"@patch('/error')\">Trigger Javascript Error</a> sends javascript error to POST /errors endpoint and logs to output ( check server logs )</div><div><a href=\"#\" class=\"underline text-blue-700\" data-on-click__prevent=\"$error = '', $servererror = ''\">Reset error</a></div></div><div><h2>Javascript error will be sent to the backend</h2><pre data-json-signals></pre></div><div data-show=\"$servererror != ''\"><h2>Server error will be shown here</h2><pre data-text=\"$servererror\"></pre></div><div data-on-signal-patch-filter=\"{include: /.*servererror.*/}\" data-on-signal-patch=\"(window.dispatchEvent(new CustomEvent('hideevent', {detail:{id: 1}})))\" data-on-hideevent__window__delay.2s=\"$servererror=''\"></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<h1 class=\"text-2xl font-bold mb-4\">Error to Backend Example</h1><div class=\"flex flex-col\" data-signal-error=\"\" data-signal-servererror=\"\" data-on-error__window=\"$error = evt.error.stack; @post('/error'), evt.preventDefault()\" data-on-datastar-fetch=\"(evt.detail.type == 'error' && ($servererror = evt.detail.argsRaw.status))\"><div><a href=\"#\" class=\"underline text-blue-700\" data-on-click__prevent=\"@get('/error', { filterSignals: { exclude: /error/  }})\">Trigger Error</a></div><div><a href=\"#\" class=\"underline text-blue-700\" data-on-click__prevent=\"@patch('/error')\">Trigger Javascript Error</a> sends javascript error to POST /errors endpoint and logs to output ( check server logs )</div><div><a href=\"#\" class=\"underline text-blue-700\" data-on-click__prevent=\"$error = '', $servererror = ''\">Reset error</a></div></div><div><h2>Javascript error will be sent to the backend</h2><pre data-json-signals></pre></div><div data-show=\"$servererror != ''\"><h2>Server error will be shown here</h2><pre data-text=\"$servererror\"></pre></div><div data-on-signal-patch-filter=\"{include: /.*servererror.*/}\" data-on-signal-patch=\"(window.dispatchEvent(new CustomEvent('hide-event', {detail:{id: 1}})))\" data-on-hide-event__window__delay.2s=\"$servererror=''\"></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -124,7 +124,7 @@ func Results(in any) templ.Component {
 			var templ_7745c5c3_Var5 string
 			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(templ.JSONString(in))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `errortobackend/main.templ`, Line: 40, Col: 30}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `errortobackend/main.templ`, Line: 41, Col: 30}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 			if templ_7745c5c3_Err != nil {

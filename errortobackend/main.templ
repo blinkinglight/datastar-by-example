@@ -4,6 +4,7 @@ import "github.com/blinkinglight/datastar-by-example/shared"
 
 templ Form() {
 	@shared.Main() {
+		<h1 class="text-2xl font-bold mb-4">Error to Backend Example</h1>
 		<div class="flex flex-col" data-signal-error="" data-signal-servererror="" data-on-error__window="$error = evt.error.stack; @post('/error'), evt.preventDefault()" data-on-datastar-fetch="(evt.detail.type == 'error' && ($servererror = evt.detail.argsRaw.status))">
 			<div>
 				<a href="#" class="underline text-blue-700" data-on-click__prevent="@get('/error', { filterSignals: { exclude: /error/  }})">Trigger Error</a>
@@ -23,7 +24,7 @@ templ Form() {
 			<h2>Server error will be shown here</h2>
 			<pre data-text="$servererror"></pre>
 		</div>
-		<div data-on-signal-patch-filter="{include: /.*servererror.*/}" data-on-signal-patch="(window.dispatchEvent(new CustomEvent('hideevent', {detail:{id: 1}})))" data-on-hideevent__window__delay.2s="$servererror=''"></div>
+		<div data-on-signal-patch-filter="{include: /.*servererror.*/}" data-on-signal-patch="(window.dispatchEvent(new CustomEvent('hide-event', {detail:{id: 1}})))" data-on-hide-event__window__delay.2s="$servererror=''"></div>
         @Results(nil)
 	}
 }
