@@ -12,16 +12,15 @@ func main() {
 	router, dsRouter := shared.Routers()
 
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		Form().Render(r.Context(), w)
+		ReverseIntersect().Render(r.Context(), w)
 	})
 
-	dsRouter.Post("/", func(w http.ResponseWriter, r *http.Request) {
-		r.ParseForm()
+	dsRouter.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(200)
 		sse := datastar.NewSSE(w, r)
-		sse.PatchElementTempl(Results(r.Form.Get("name")))
+		sse.PatchElementTempl(LoadMore(), datastar.WithSelectorID("intersect"), datastar.WithModePrepend())
 	})
 
-	log.Printf("Starting server on http://localhost:8080")
+	log.Printf("Starting server on :8080")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }

@@ -1,0 +1,23 @@
+package main 
+
+import "github.com/blinkinglight/datastar-by-example/shared"
+import "time"
+import "fmt"
+
+templ ReverseIntersect() {
+	@shared.Main() {
+		<div id="intersect" style="height: 200px; overflow: auto;">
+			@LoadMore()
+			<div data-on-load__once="el.scrollIntoView()">view</div>
+		</div>
+	}
+}
+
+templ LoadMore() {
+	<div data-on-intersect="@get('/')" id={ fmt.Sprintf("a-%d", time.Now().UnixNano()) }></div>
+	<div id={ fmt.Sprintf("b-%d", time.Now().UnixNano()) }>
+		for i := 0; i < 25; i++ {
+			<div class="item">Item { i }</div>
+		}
+	</div>
+}

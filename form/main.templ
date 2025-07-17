@@ -4,12 +4,25 @@ import "github.com/blinkinglight/datastar-by-example/shared"
 
 templ Form() {
 	@shared.Main() {
+        <h1 class="text-2xl font-bold mb-4">Form Example ( contentType: form )</h1>
 		<div>
-            <form data-on-submit__prevent="@post('/', { contentType: 'form', 'headers': { 'X-CSRF-Token': '123' } })">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-                <input type="submit" value="Submit">
-            </form>
+			<form data-on-submit__prevent="@post('/', { contentType: 'form', 'headers': { 'X-CSRF-Token': '123' } })">
+				<label for="name">Name:</label>
+				<input type="text" class="border border-gray-500" id="name" name="name"/>
+				<input type="submit" value="Submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 rounded"/>
+			</form>
+			@Results(nil)
 		</div>
 	}
+}
+
+templ Results(in any) {
+	<div id="results">
+		<h2>Results</h2>
+		if in != nil {
+			<pre>{ templ.JSONString(in) }</pre>
+		} else {
+            <p>No results yet.</p>
+        }
+	</div>
 }

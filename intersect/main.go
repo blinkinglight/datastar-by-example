@@ -4,18 +4,12 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/go-chi/chi/v5"
-	middleware "github.com/go-chi/chi/v5/middleware"
+	"github.com/blinkinglight/datastar-by-example/shared"
 	"github.com/starfederation/datastar-go/datastar"
 )
 
 func main() {
-	router := chi.NewMux()
-	router.Use(middleware.Logger)
-	router.Use(middleware.Recoverer)
-
-	dsRouter := chi.NewRouter()
-	router.Use(middleware.RouteHeaders().Route("Datastar-Request", "true", middleware.New(dsRouter)).Handler)
+	router, dsRouter := shared.Routers()
 
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		Intersect().Render(r.Context(), w)

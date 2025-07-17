@@ -1,10 +1,14 @@
 # datastar by example
+## golang + https://data-star.dev examples
 
-golang + https://data-star.dev examples
+to run these examples with live rebuild on code change you need `task` `go install github.com/go-task/task/v3/cmd/task@latest`
 
 
-infinite scroll:
-`go run ./intersect`
+infinite scroll example:
+`task -w`
 
-content type: form
-`go run ./form`
+content type: form example
+`task -w form`
+
+send javascript exceptiosn to backend example
+`task -w errortobackend`
