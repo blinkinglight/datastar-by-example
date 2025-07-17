@@ -10,5 +10,5 @@ infinite scroll example:
 content type: form example
 `task -w form`
 
-send javascript exceptiosn to backend example
+send javascript exceptions to backend example
 `task -w errortobackend`
