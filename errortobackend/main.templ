@@ -1,0 +1,45 @@
+package main
+
+import "github.com/blinkinglight/datastar-by-example/shared"
+
+templ Form() {
+	@shared.Main() {
+		<div class="flex flex-col" data-signal-error="" data-signal-servererror="" data-on-error__window="$error = evt.error.stack; @post('/error'), evt.preventDefault()" data-on-datastar-fetch="(evt.detail.type == 'error' && ($servererror = evt.detail.argsRaw.status))">
+			<div>
+				<a href="#" class="underline text-blue-700" data-on-click__prevent="@get('/error', { filterSignals: { exclude: /error/  }})">Trigger Error</a>
+			</div>
+			<div>
+				<a href="#" class="underline text-blue-700" data-on-click__prevent="@patch('/error')">Trigger Javascript Error</a> sends javascript error to POST /errors endpoint and logs to output ( check server logs )
+			</div>
+			<div>
+				<a href="#" class="underline text-blue-700" data-on-click__prevent="$error = '', $servererror = ''">Reset error</a>
+			</div>
+		</div>
+		<div>
+			<h2>Javascript error will be sent to the backend</h2>
+			<pre data-json-signals></pre>
+		</div>
+		<div data-show="$servererror != ''">
+			<h2>Server error will be shown here</h2>
+			<pre data-text="$servererror"></pre>
+		</div>
+		<div data-on-signal-patch-filter="{include: /.*servererror.*/}" data-on-signal-patch="(window.dispatchEvent(new CustomEvent('hideevent', {detail:{id: 1}})))" data-on-hideevent__window__delay.2s="$servererror=''"></div>
+        @Results(nil)
+	}
+}
+
+// div without ID so no merge target js error
+templ Error() {
+	<div>Error</div>
+}
+
+templ Results(in any) {
+	<div id="results">
+		<h2>Results</h2>
+		if in != nil {
+			<pre>{ templ.JSONString(in) }</pre>
+		} else {
+            <p>No results yet.</p>
+        }
+	</div>
+}

@@ -1,15 +1,21 @@
 package shared
 
+import "github.com/ituoga/toolbox/hotreload"
+
 templ Main() {
 	<!DOCTYPE html>
 	<html>
 		<head>
 			<meta charset="utf-8"/>
-			<title>DataStar Example</title>
+			<title>DataStar Examples</title>
 			<script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@main/bundles/datastar.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 		</head>
 		<body>
-			{ children... }
+			<section class="container mx-auto p-4 max-w-3xl">
+				{ children... }
+				@templ.Raw(hotreload.HTML)
+			</section>
 		</body>
 	</html>
 }
