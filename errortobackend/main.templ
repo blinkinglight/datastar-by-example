@@ -5,7 +5,7 @@ import "github.com/blinkinglight/datastar-by-example/shared"
 templ Form() {
 	@shared.Main() {
 		<h1 >Error to Backend Example</h1>
-		<div class="flex flex-col" data-signal-error="" data-signal-servererror="" data-on-error__window="$error = evt.error.stack; @post('/error'), evt.preventDefault()" data-on-datastar-fetch="(evt.detail.type == 'error' && ($servererror = evt.detail.argsRaw.status))">
+		<div class="flex flex-col" data-signals=" {error: {message: '', url: ''}}" data-signal-servererror="" data-on-error__window="($error.message = evt.error.message) && ($error.url=window.location.href)  && @post('/error') && evt.preventDefault()" data-on-datastar-fetch="(evt.detail.type == 'error' && ($servererror = evt.detail.argsRaw.status))">
 			<div>
 				<a href="#" class="" data-on-click__prevent="@get('/error', { filterSignals: { exclude: /error/  }})">Trigger Error</a>
 			</div>
@@ -13,7 +13,7 @@ templ Form() {
 				<a href="#" class="" data-on-click__prevent="@patch('/error')">Trigger Javascript Error</a> sends javascript error to POST /errors endpoint and logs to output ( check server logs )
 			</div>
 			<div>
-				<a href="#" class="" data-on-click__prevent="$error = '', $servererror = ''">Reset error</a>
+				<a href="#" class="" data-on-click__prevent="$error = {message: '', url: ''}, $servererror = ''">Reset error</a>
 			</div>
 		</div>
 		<div>

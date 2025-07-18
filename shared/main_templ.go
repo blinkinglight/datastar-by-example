@@ -31,7 +31,7 @@ func Main() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype html><html><head><meta charset=\"utf-8\"><title>DataStar Examples</title><script type=\"module\" src=\"https://cdn.jsdelivr.net/gh/starfederation/datastar@main/bundles/datastar.js\"></script><link rel=\"stylesheet\" href=\"/static/output.css\"></head><body><section class=\"container \">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype html><html><head><meta charset=\"utf-8\"><title>DataStar Examples</title><script type=\"module\" src=\"https://cdn.jsdelivr.net/gh/starfederation/datastar@main/bundles/datastar.js\"></script><script src=\"https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4\"></script><link rel=\"stylesheet\" href=\"/static/output.css\"></head><body><section class=\"container \">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

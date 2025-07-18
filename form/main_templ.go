@@ -51,7 +51,7 @@ func Form() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<div class=\"grid-cols-8\"><button type=\"button\" class=\"btn-gradient-purple\">btn-gradient-purple</button> <button type=\"button\" class=\"btn-neon-green\">btn-neon-green</button> <button type=\"button\" class=\"btn-vintage\">btn-vintage</button> <button type=\"button\" class=\"btn-cyber\">btn-cyber</button> <button type=\"button\" class=\"btn-soft-coral\">btn-soft-coral</button> <button type=\"button\" class=\"btn-glass\">btn-glass</button> <button type=\"button\" class=\"btn-retro-orange\">btn-retro-orange</button> <button type=\"button\" class=\"btn-minimal\">btn-minimal</button> <button type=\"button\" class=\"btn-forest\">btn-forest</button> <button type=\"button\" class=\"btn-sunset\">btn-sunset</button> <button type=\"button\" class=\"btn-ocean\">btn-ocean</button> <button type=\"button\" class=\"btn-dark-mode\">btn-dark-mode</button> <button type=\"button\" class=\"btn-candy\">btn-candy</button> <button type=\"button\" class=\"btn-industrial\">btn-industrial</button> <button type=\"button\" class=\"btn-pastel-mint\">btn-pastel-mint</button> <button type=\"button\" class=\"btn-electric\">btn-electric</button> <button type=\"button\" class=\"btn-royal\">btn-royal</button> <button type=\"button\" class=\"btn-arctic\">btn-arctic</button> <button type=\"button\" class=\"btn-fire\">btn-fire</button> <button type=\"button\" class=\"btn-space\">btn-space</button></div></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -98,7 +98,7 @@ func Results(in any) templ.Component {
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(templ.JSONString(in))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `form/main.templ`, Line: 45, Col: 30}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `form/main.templ`, Line: 23, Col: 30}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {

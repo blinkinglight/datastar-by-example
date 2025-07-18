@@ -32,16 +32,19 @@ func main() {
 		r.ParseForm()
 		w.WriteHeader(200)
 		var signals struct {
-			Error string `json:"error"`
+			Error struct {
+				Message string `json:"message"`
+				Url     string `json:"url"`
+			} `json:"error"`
 		}
 		if err := datastar.ReadSignals(r, &signals); err != nil {
 			log.Printf("Error reading signals: %v", err)
 			http.Error(w, "Failed to read signals", http.StatusBadRequest)
 			return
 		}
-		log.Printf("Received error signal: %s", signals.Error)
+		log.Printf("Received error signal: %s", signals.Error.Message)
 		sse := datastar.NewSSE(w, r)
-		sse.PatchElementTempl(Results("Got error from FE: " + signals.Error))
+		sse.PatchElementTempl(Results("Got error from FE: " + signals.Error.Message + ", URL: " + signals.Error.Url))
 
 	})
 	log.Printf("Starting server on http://localhost:8080")
