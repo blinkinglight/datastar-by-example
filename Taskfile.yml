@@ -34,6 +34,17 @@ tasks:
     cmds:
       - echo "Killing all processes"
       - pkill -f ./site || true
+
+  tailwind:
+    method: none
+    desc: build tailwind css
+    sources:
+      - "static/**/*"
+    generates:
+      - static/output.css
+    cmds:
+      - tailwindcss -i ./static/app.css -o ./static/output.css --optimize
+      # - tailwindcss -i ./static/app.css -o ./static/output.css --minify
       
   site:
     method: none
@@ -41,6 +52,7 @@ tasks:
     deps:
       # - npm
       - templ
+      - tailwind
     sources:
       - "**/*.go"
       - "**/*.md"
